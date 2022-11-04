@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: Whatsapp
+url: 'https://github.com/gajosu/whatsapp-ha-addon'
+maintainer: Gabriel González <gabriel.glez.velez@gmail.com>

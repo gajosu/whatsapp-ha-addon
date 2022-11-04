@@ -1,0 +1,22 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: Whatsapp
+version: "1.2.0"
+slug: whatsapp
+description: Whatsapp integration for Home Assistant.
+url: "https://github.com/gajosu/whatsapp-ha-addon/tree/main/example"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+init: false
+map:
+  - share:rw
+options:
+  message: "Hello world..."
+schema:
+  message: "str?"
+
+ports:
+  3000/tcp: 3000
