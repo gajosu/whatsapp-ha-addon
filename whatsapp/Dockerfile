@@ -1,6 +1,7 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 ARG BUILD_FROM
-FROM $BUILD_FROM
+# FROM $BUILD_FROM
+FROM ghcr.io/hassio-addons/debian-base:6.1.3
 
 #install node and npm
 RUN apt-get update && apt-get install -y \
@@ -30,7 +31,7 @@ RUN  apt-get update \
 
 # Install Puppeteer under /node_modules so it's available system-wide
 WORKDIR /app
-COPY . .
+COPY ./src .
 RUN npm install
 # RUN apk add ttf-freefont chromium
 CMD node index.js
