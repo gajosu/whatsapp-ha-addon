@@ -3,7 +3,7 @@ const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
         //chromium path
-        executablePath: '/usr/bin/chromium-browser',
+        executablePath: '/usr/bin/chromium',
         headless: true,
         args: [
             '--no-sandbox',
