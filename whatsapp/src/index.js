@@ -12,27 +12,31 @@ const qrCode = require('qrcode')
 const whatsapp = require("./whatsapp");
 const api = require("./routes/api");
 const web = require("./routes/web");
+const os = require('os');
 
 wsClient = whatsapp.client;
 
-io.on("connection",  async (socket) => {
+io.on("connection", async (socket) => {
     wsClient.on('qr', async qr => {
-        const qrImage = await qrCode.toDataURL(qr, {width: 500});
+        const qrImage = await qrCode.toDataURL(qr, { width: 500 });
         console.log(qr);
-        socket.emit('qr_code', {data: qrImage})
+        socket.emit('qr_code', { data: qrImage })
     });
 });
 
 server.listen(app_port, () => {
-    console.log('listening on *:' + app_port);
+    console.log('listening on '
+        //get the ip address of the server
+        + os.networkInterfaces().eth0[0].address
+        + ':' + app_port);
 });
 
 app.use(express.json());
 
 app.use(function (req, res, next) {
     const api_key = req.query.api_key;
-    if(app_access_token !== api_key){
-        return res.status(401).json({error: 'unauthorized'});
+    if (app_access_token !== api_key) {
+        return res.status(401).json({ error: 'unauthorized' });
     }
     next();
 });
@@ -40,10 +44,10 @@ app.use(function (req, res, next) {
 app.use("/", web);
 
 app.use(function (req, res, next) {
-    if(!whatsapp.is_authenticated){
+    if (!whatsapp.is_authenticated) {
         return res.status(500).json({ error: 'Error sending message, try again later' });
     }
-    
+
     next();
 });
 

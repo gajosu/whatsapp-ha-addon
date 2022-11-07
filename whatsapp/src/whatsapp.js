@@ -33,8 +33,4 @@ client.on('disconnected', async (session) => {
     client.initialize();
 });
 
-// client.on('message', (message) => {
-//     console.log(message);
-// });
-
 module.exports.client = client;
