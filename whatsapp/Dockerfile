@@ -1,8 +1,7 @@
 # alpine image
 ARG BUILD_FROM
 
-# FROM $BUILD_FROM
-FROM ghcr.io/hassio-addons/base:12.2.6
+FROM $BUILD_FROM
 
 #install node and npm
 RUN apk add --no-cache nodejs npm
@@ -15,7 +14,6 @@ RUN PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 # Copy root filesystem
 # COPY rootfs /
 
-# Install Puppeteer under /node_modules so it's available system-wide
 WORKDIR /app
 COPY ./src .
 RUN npm install
