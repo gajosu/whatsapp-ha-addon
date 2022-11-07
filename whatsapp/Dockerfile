@@ -1,18 +1,14 @@
-# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
+# alpine image
 ARG BUILD_FROM
 
 # FROM $BUILD_FROM
-FROM ghcr.io/hassio-addons/debian-base:6.1.3
+FROM ghcr.io/hassio-addons/base:12.2.6
 
 #install node and npm
-RUN apt-get update && apt-get install -y \
-    curl \
-    && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
-    && apt-get install -y nodejs \
-    && apt-get install -y build-essential
+RUN apk add --no-cache nodejs npm
 
 #install chromiun
-RUN apt-get install -y chromium
+RUN apk add --no-cache chromium
 
 RUN PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
