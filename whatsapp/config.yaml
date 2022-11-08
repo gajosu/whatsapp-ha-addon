@@ -13,10 +13,6 @@ arch:
 init: false
 map:
   - share:rw
-options:
-  message: "Hello world..."
-schema:
-  message: "str?"
 
 ports:
   3000/tcp: 3000
