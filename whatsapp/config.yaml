@@ -5,11 +5,11 @@ slug: whatsapp
 description: Whatsapp integration for Home Assistant.
 url: "https://github.com/gajosu/whatsapp-ha-addon/tree/master/whatsapp"
 arch:
-  - armhf
-  - armv7
-  - aarch64
+  # - armhf
+  # - armv7
+  # - aarch64
   - amd64
-  - i386
+  # - i386
 init: false
 map:
   - share:rw
