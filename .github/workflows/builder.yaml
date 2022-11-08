@@ -59,7 +59,7 @@ jobs:
   build:
     needs: init
     runs-on: ubuntu-latest
-    if: needs.init.outputs.changed == 'true'
+    # if: needs.init.outputs.changed == 'true'
     name: Build ${{ matrix.arch }} ${{ matrix.addon }} add-on
     strategy:
       matrix:
@@ -79,7 +79,7 @@ jobs:
           path: "./${{ matrix.addon }}"
 
       - name: Login to GitHub Container Registry
-        if: env.BUILD_ARGS != '--test'
+        # if: env.BUILD_ARGS != '--test'
         uses: docker/login-action@v2.1.0
         with:
           registry: ghcr.io
