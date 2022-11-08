@@ -1,15 +1,17 @@
 # alpine image
 ARG BUILD_FROM
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 FROM $BUILD_FROM
+
+tail -f /etc/apk/repositories
 
 #install node and npm
 RUN apk add --no-cache nodejs npm
 
-#install chromiun
+#install chromiun manually
 RUN apk add --no-cache chromium
 
-RUN PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 # Copy root filesystem
 # COPY rootfs /
