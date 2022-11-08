@@ -12,6 +12,7 @@ COPY ./whatsapp-web-rest-api .
 #install node 14 and npm manually
 RUN apt-get update && apt-get install -y curl
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+RUN apt install libatomic1
 RUN . ~/.nvm/nvm.sh && nvm install 14.17.6 && npm install
 
 #install chromiun
