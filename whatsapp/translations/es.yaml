@@ -1,0 +1,2 @@
+network:
+  3000/tcp: El puerto del servidor web (No se usa para Ingress)
