@@ -4,8 +4,6 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 FROM $BUILD_FROM
 
-tail -f /etc/apk/repositories
-
 #install node and npm
 RUN apk add --no-cache nodejs npm
 
