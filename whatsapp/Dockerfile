@@ -19,7 +19,7 @@ RUN apt-get install -y chromium
 
 WORKDIR /app
 COPY ./whatsapp-web-rest-api .
-RUN /usr/bin/npm install
+RUN npm install
 # RUN apk add ttf-freefont chromium
 CMD node index.js
 
