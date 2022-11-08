@@ -15,7 +15,7 @@ RUN PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 # COPY rootfs /
 
 WORKDIR /app
-COPY ./src .
+COPY ./whatsapp-web-rest-api .
 RUN npm install
 # RUN apk add ttf-freefont chromium
 CMD node index.js
