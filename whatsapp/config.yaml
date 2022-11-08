@@ -19,3 +19,5 @@ ports:
 
 ports_description:
   3000/tcp: The webserver port (Not used for Ingress).
+
+image: "ghcr.io/gajosu/{arch}-whatsapp-ha-addon"
