@@ -6,16 +6,10 @@ FROM $BUILD_FROM
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-#install node 14 and npm manually
-
-RUN apt-get update && \
-    apt-get install -y curl && \
-    curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
-    apt-get install -y nodejs && \
-    apt-get install -y build-essential
-
-RUN apt-get update
-RUN apt-get install npm -y
+#install nvm
+RUN apt-get update && apt-get install -y curl
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+RUN . ~/.nvm/nvm.sh && nvm install 14.17.6
 
 #install chromiun
 RUN apt-get install -y chromium
@@ -25,7 +19,7 @@ RUN apt-get install -y chromium
 
 WORKDIR /app
 COPY ./whatsapp-web-rest-api .
-RUN npm install
+RUN /usr/bin/npm install
 # RUN apk add ttf-freefont chromium
 CMD node index.js
 
