@@ -11,6 +11,9 @@ RUN apt-get update && apt-get install -y curl
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 RUN . ~/.nvm/nvm.sh && nvm install 14.17.6
 
+# show node version
+RUN node -v
+
 #install chromiun
 RUN apt-get install -y chromium
 
