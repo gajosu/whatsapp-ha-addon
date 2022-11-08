@@ -18,4 +18,4 @@ ports:
   3000/tcp: 3000
 
 ports_description:
-  3000/tcp: The webserver port (Not used for Ingress).
+  3000/tcp: The webserver port (Not used for Ingress)
