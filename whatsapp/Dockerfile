@@ -7,6 +7,8 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 #add community repository
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+# ADD so:libcrypto REPOSITORY
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
 
 #install node and npm
 RUN apk add --no-cache nodejs npm
