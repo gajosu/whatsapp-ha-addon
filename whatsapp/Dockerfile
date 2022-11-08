@@ -2,14 +2,18 @@
 ARG BUILD_FROM
 
 FROM $BUILD_FROM
+
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+
+#add community repository
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 
 #install node and npm
 RUN apk add --no-cache nodejs npm
 
+
 #install chromiun manually
 RUN apk add --no-cache chromium
-
 
 # Copy root filesystem
 # COPY rootfs /
