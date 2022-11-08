@@ -1,8 +1,8 @@
 # alpine image
 ARG BUILD_FROM
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 FROM $BUILD_FROM
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 #install node and npm
 RUN apk add --no-cache nodejs npm
