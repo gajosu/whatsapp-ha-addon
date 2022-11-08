@@ -5,17 +5,15 @@ FROM $BUILD_FROM
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-#add community repository
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
-# ADD so:libcrypto REPOSITORY
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
-
-#install node and npm
-RUN apk add --no-cache nodejs npm
+RUN apt-get update && apt-get install -y \
+    curl \
+    && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get install -y build-essential
 
 
-#install chromiun manually
-RUN apk add --no-cache chromium
+#install chromiun
+RUN apt-get install -y chromium
 
 # Copy root filesystem
 # COPY rootfs /
