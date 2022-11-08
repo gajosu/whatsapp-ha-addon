@@ -69,8 +69,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3.1.0
-        with:
-          submodules: true
+        # with:
+        #   submodules: true
 
       - name: Get information
         id: info
