@@ -1,3 +1,0 @@
-[submodule "whatsapp/whatsapp-web-rest-api"]
-	path = whatsapp/whatsapp-web-rest-api
-	url = https://github.com/gajosu/whatsapp-web-rest-api.git
