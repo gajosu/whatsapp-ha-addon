@@ -6,18 +6,17 @@ FROM ghcr.io/hassio-addons/debian-base:6.1.3
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-
-
 #install node 14 and npm
 RUN apt-get update && apt-get install -y curl gnupg2 && curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
-#node version
-RUN node -v
 
 #install chromiun
-RUN apt-get install -y chromium
+RUN apt-get install -y chromium git
 
 WORKDIR /app
-COPY ./whatsapp-web-rest-api .
+
+RUN git clone --branch "v1.0.0" --depth=1 \
+        "https://github.com/gajosu/whatsapp-web-rest-api.git" /app
+
 
 RUN npm install
 
