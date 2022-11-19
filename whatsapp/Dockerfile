@@ -2,27 +2,23 @@
 ARG BUILD_FROM
 
 # FROM $BUILD_FROM
-FROM ghcr.io/hassio-addons/debian-base:6.1.3
+FROM ghcr.io/hassio-addons/base:12.2.7
+
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-#install node 14 and npm
-RUN apt-get update && apt-get install nodejs npm -y
+#install node and npm
+RUN apk add --no-cache nodejs npm
 
-#install chromiun
-RUN apt-get install -y chromium git
+#install chromiun manually
+RUN apk add --no-cache chromium
+
+
+# Copy root filesystem
+# COPY rootfs /
 
 WORKDIR /app
-
-RUN git clone --branch "v2.0.0" --depth=1 \
-        "https://github.com/gajosu/whatsapp-web-rest-api.git" /app
-
-# install production dependencies
+COPY ./whatsapp-web-rest-api .
 RUN npm install
-
-RUN npm run build
-
-RUN node -v
-
-CMD node . --supervisorToken=$SUPERVISOR_TOKEN
-
+# RUN apk add ttf-freefont chromium
+CMD node index.js
