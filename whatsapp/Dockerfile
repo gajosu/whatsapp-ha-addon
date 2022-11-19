@@ -7,7 +7,7 @@ FROM ghcr.io/hassio-addons/debian-base:6.1.3
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 #install node 14 and npm
-RUN apt-get update && apt-get install -y curl gnupg2 && curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
+RUN apt-get update && apt-get install nodejs npm -y
 
 #install chromiun
 RUN apt-get install -y chromium git
@@ -21,6 +21,8 @@ RUN git clone --branch "v2.0.0" --depth=1 \
 RUN npm install
 
 RUN npm run build
+
+RUN node -v
 
 CMD node . --supervisorToken=$SUPERVISOR_TOKEN
 
