@@ -22,10 +22,5 @@ RUN npm install --production
 
 RUN npm run build
 
-# Copy root filesystem
-# COPY rootfs /
-
-# RUN apk add ttf-freefont chromium
-
 CMD node . --supervisorToken=$SUPERVISOR_TOKEN
 
