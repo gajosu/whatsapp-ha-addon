@@ -14,15 +14,18 @@ RUN apt-get install -y chromium git
 
 WORKDIR /app
 
-RUN git clone --branch "v1.0.0" --depth=1 \
+RUN git clone --branch "v2.0.0" --depth=1 \
         "https://github.com/gajosu/whatsapp-web-rest-api.git" /app
 
+# install production dependencies
+RUN npm install --production
 
-RUN npm install
+RUN npm run build
 
 # Copy root filesystem
 # COPY rootfs /
 
 # RUN apk add ttf-freefont chromium
-CMD node index.js
+
+CMD node . --supervisorToken=$SUPERVISOR_TOKEN
 
