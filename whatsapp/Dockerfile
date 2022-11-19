@@ -6,10 +6,8 @@ FROM ghcr.io/hassio-addons/debian-base:6.1.3
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-#install node 18 and npm
-RUN apt-get update && apt-get install -y curl gnupg2
-RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
-RUN apt-get install -y nodejs
+#install node 14 and npm
+RUN apt-get update && apt-get install -y curl gnupg2 && curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
 
 #install chromiun
 RUN apt-get install -y chromium git
