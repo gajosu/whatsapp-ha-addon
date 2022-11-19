@@ -26,5 +26,6 @@ RUN npm run build
 
 RUN node -v
 
+
 CMD node . --supervisorToken=$SUPERVISOR_TOKEN
 
