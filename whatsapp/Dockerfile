@@ -18,7 +18,15 @@ RUN apk add --no-cache chromium
 # COPY rootfs /
 
 WORKDIR /app
-COPY ./whatsapp-web-rest-api .
+
+RUN git clone --branch "v2.0.0" --depth=1 \
+        "https://github.com/gajosu/whatsapp-web-rest-api.git" /app
+
+# install production dependencies
 RUN npm install
-# RUN apk add ttf-freefont chromium
-CMD node index.js
+
+RUN npm run build
+
+RUN node -v
+
+CMD node . --supervisorToken=$SUPERVISOR_TOKEN
