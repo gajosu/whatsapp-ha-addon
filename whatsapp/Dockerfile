@@ -1,21 +1,18 @@
 # alpine image
-ARG BUILD_FROM
+# ARG BUILD_FROM
 
 # FROM $BUILD_FROM
-FROM ghcr.io/hassio-addons/base:12.2.7
-
+FROM ghcr.io/hassio-addons/debian-base:6.1.3
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-#install node and npm
-RUN apk add --no-cache nodejs npm
+#install node 18 and npm
+RUN apt-get update && apt-get install -y curl gnupg2
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs
 
-#install chromiun manually
-RUN apk add --no-cache chromium
-
-
-# Copy root filesystem
-# COPY rootfs /
+#install chromiun
+RUN apt-get install -y chromium git
 
 WORKDIR /app
 
@@ -30,3 +27,4 @@ RUN npm run build
 RUN node -v
 
 CMD node . --supervisorToken=$SUPERVISOR_TOKEN
+
