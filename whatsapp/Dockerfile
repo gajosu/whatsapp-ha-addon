@@ -18,7 +18,7 @@ RUN git clone --branch "v2.0.0" --depth=1 \
         "https://github.com/gajosu/whatsapp-web-rest-api.git" /app
 
 # install production dependencies
-RUN npm install --production
+RUN npm install
 
 RUN npm run build
 
