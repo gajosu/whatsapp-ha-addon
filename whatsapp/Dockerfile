@@ -7,10 +7,9 @@ FROM $BUILD_FROM
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 #install node 14 and npm
-RUN apt-get update && apt-get install -y curl gnupg2 && curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
+RUN apt-get install -y curl gnupg2 && curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
 
-#install chromiun
-RUN apt-get install -y chromium
+
 
 WORKDIR /app
 
