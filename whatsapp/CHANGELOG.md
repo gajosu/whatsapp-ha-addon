@@ -1,4 +1,6 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
+## 2.0.3
+- Upgraded base image gajosu/whatsapp-web-rest-api@v2.0.3
 
 ## 2.0.2
 
