@@ -4,4 +4,4 @@
 # s6-overlay docs: https://github.com/just-containers/s6-overlay
 # ==============================================================================
 ## Run your program
-exec node /app/dist/src/index.js --port
+exec cd /app && node dist/src/index.js
