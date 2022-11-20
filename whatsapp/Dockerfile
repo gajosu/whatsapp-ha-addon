@@ -14,7 +14,7 @@ RUN apt-get install -y chromium
 
 WORKDIR /app
 
-RUN git clone --branch "master" --depth=1 \
+RUN git clone --branch "v2.0.1" --depth=1 \
         "https://github.com/gajosu/whatsapp-web-rest-api.git" /app
 
 # install production dependencies
