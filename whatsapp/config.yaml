@@ -17,7 +17,7 @@ map:
 options:
   webserver_port: 3000
 schema:
-  webserver_port: "int(1-65535)"
+  webserver_port: "int"
 
 ports:
   3000/tcp: 3000
