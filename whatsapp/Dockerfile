@@ -1,8 +1,8 @@
 # alpine image
-# ARG BUILD_FROM
+ARG BUILD_FROM
 
-# FROM $BUILD_FROM
-FROM ghcr.io/hassio-addons/debian-base:6.1.3
+FROM $BUILD_FROM
+# FROM ghcr.io/hassio-addons/debian-base:6.1.3
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
@@ -10,7 +10,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 RUN apt-get update && apt-get install -y curl gnupg2 && curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
 
 #install chromiun
-RUN apt-get install -y chromium git
+RUN apt-get install -y chromium
 
 WORKDIR /app
 
