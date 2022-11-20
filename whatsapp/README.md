@@ -26,17 +26,17 @@ Add the following to your `configuration.yaml` file:
 rest_command:
     whatsapp_send_text_message:
         url: http://<your_ha_ip>:3000/api/messages
-        method: POST,
+        method: POST
         headers:
-        Content-Type: application/json
+            Content-Type: application/json
         payload: '{"to": "{{ to }}", "msg": "{{ message }}"}'
 
     # Send a file, e.g. a picture
     whatsapp_send_media_message:
         url: http://<your_ha_ip>:3000/api/messages
-        method: POST,
+        method: POST
         headers:
-        Content-Type: application/json
+            Content-Type: application/json
         payload: '{"to": "{{ to }}", "url": "{{ url }}"}'
 ```
 
