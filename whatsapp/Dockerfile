@@ -20,5 +20,7 @@ RUN git clone --branch "v2.0.0" --depth=1 \
 # install production dependencies
 RUN npm install
 
-CMD npm run build && node dist/index.js --supervisorToken=$SUPERVISOR_TOKEN
+RUN npm run build
+
+CMD node dist/src/index.js --supervisorToken=$SUPERVISOR_TOKEN
 
