@@ -22,5 +22,5 @@ RUN npm install
 
 RUN npm run build
 
-CMD node dist/src/index.js --supervisorToken=${SUPERVISOR_TOKEN}
+CMD node dist/src/index.js
 
