@@ -1,6 +1,6 @@
 # Whatsapp web add-on repository
 
-This repository can be used as a "blueprint" for add-on development to help you get started.
+<!-- This repository can be used as a "blueprint" for add-on development to help you get started. -->
 
 ## Installation
 
