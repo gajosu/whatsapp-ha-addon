@@ -14,6 +14,11 @@ init: false
 map:
   - share:rw
 
+options:
+  webserver_port: 3000
+schema:
+  webserver_port: "int(1-65535)"
+
 ports:
   3000/tcp: 3000
 

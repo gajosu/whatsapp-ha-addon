@@ -1,2 +1,7 @@
 network:
   3000/tcp: El puerto del servidor web (No se usa para Ingress)
+
+configuration:
+  webserver_port:
+    name: Puerto del servidor web
+    description: Por defecto 3000, si se cambia se debe cambiar también en la configuración de red.

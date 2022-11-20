@@ -5,5 +5,8 @@
 # ==============================================================================
 ## Run your program
 
+declare webserver_port
+webserver_port=$(bashio::config 'webserver_port')
+
 cd /app || exit 1
-exec node dist/src/index.js
+exec node dist/src/index.js --port="${webserver_port}"
