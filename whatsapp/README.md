@@ -65,8 +65,8 @@ The add-on will send events to Home Assistant when a message is received.
 | --- | --- | --- |
 | `whatsapp_message_received` | Triggered when a message is received. | { [Message Schema](#message-schema) } |
 | `whatsapp_message_sent` | Triggered when a message is sent. | { [Message Schema](#message-schema) } |
-| `whatsapp_message_ack` | Triggered when a message is acknowledged. | { message: [Message Schema](#message-schema), ack : [Ack Schema](#ack-schema) } |
-| `whatsapp_state` | Triggered when the state of the connection changes. | { state : [WA State Schema Schema](#wa-state-schema) } |
+| `whatsapp_message_ack` | Triggered when a message is acknowledged. | { message: [Message Schema](#message-schema), ack : [Ack Schema](#ack-schema-enum) } |
+| `whatsapp_state` | Triggered when the state of the connection changes. | { state : [WA State Schema Schema](#wa-state-schema-enum) } |
 | `whatsapp_authenticated` | Triggered when the connection is authenticated. | None |
 | `whatsapp_disconnected` | Triggered when the connection is disconnected. | None |
 
