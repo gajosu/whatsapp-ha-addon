@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y curl gnupg2 && curl -sL https://deb.nod
 #install chromiun
 RUN apt-get install -y chromium
 
+# Copy root filesystem
+COPY rootfs /
+
 WORKDIR /app
 
 RUN git clone --branch "v2.0.2" --depth=1 \
@@ -21,6 +24,3 @@ RUN git clone --branch "v2.0.2" --depth=1 \
 RUN npm install
 
 RUN npm run build
-
-CMD node dist/src/index.js
-

@@ -7,13 +7,11 @@
 # Add your code here
 
 # Declare variables
-declare message
+declare port
 
-## Get the 'message' key from the user config options.
-message=$(bashio::config 'message')
+## Get port 3000/tcp from the user config options.
+port=$(bashio::config 'port')
 
-## Print the message the user supplied, defaults to "Hello World..."
-bashio::log.info "${message:="Hello World..."}"
 
 ## Run your program
-exec /usr/bin/my_program
+exec node /app/dist/src/index.js --port "${port}"
