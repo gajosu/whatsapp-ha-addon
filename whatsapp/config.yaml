@@ -20,3 +20,5 @@ ports:
 ports_description:
   3000/tcp: The webserver port (Not used for Ingress).
 # image: "ghcr.io/gajosu/amd64-whatsapp-ha-addon:2.0.0"
+
+homeassistant_api: true
