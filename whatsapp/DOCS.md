@@ -48,16 +48,23 @@ automation:
 ## Reciving messages
 The add-on will send events to Home Assistant when a message is received.
 
+
 ### Events
 <!-- Table -->
 | Event | Description | Data |
 | --- | --- | --- |
+| `whatsapp_authenticated` | Triggered when the connection is authenticated. | None |
+| `whatsapp_disconnected` | Triggered when the connection is disconnected. | None |
 | `whatsapp_message_received` | Triggered when a message is received. | { [Message Schema](#message-schema) } |
 | `whatsapp_message_sent` | Triggered when a message is sent. | { [Message Schema](#message-schema) } |
 | `whatsapp_message_ack` | Triggered when a message is acknowledged. | { message: [Message Schema](#message-schema), ack : [Ack Schema](#ack-schema-enum) } |
+| `whatsapp_message_revoke_for_everyone` | Triggered when a message is revoked for everyone. | { message: [Message Schema](#message-schema), revokedMessage:  [Message Schema](#message-schema)} |
+| `whatsapp_message_revoke_for_me` | Triggered when a message is revoked for you. | { message: [Message Schema](#message-schema)} |
+| `whatsapp_message_group_join` | Triggered when a user joins a group. | { [GroupNotification Schema](#groupnotification-schema) } |
+| `whatsapp_message_group_leave` | Triggered when a user leaves a group. | { [GroupNotification Schema](#groupnotification-schema) } |
+| `whatsapp_message_group_update` | Triggered when a group is updated, such as subject, description or picture. | { [GroupNotification Schema](#groupnotification-schema) } |
+| `whatsapp_message_call` | Triggered when a call is received. | { [Call Schema](#call-schema) } |
 | `whatsapp_state` | Triggered when the state of the connection changes. | { state : [WA State Schema Schema](#wa-state-schema-enum) } |
-| `whatsapp_authenticated` | Triggered when the connection is authenticated. | None |
-| `whatsapp_disconnected` | Triggered when the connection is disconnected. | None |
 
 
 ### Message Schema
@@ -118,6 +125,31 @@ For more information about the message schema, see the [Message class](https://d
 | `UNLAUNCHED` | Unlaunched. | `string` |
 | `UNPAIRED` | Unpaired. | `string` |
 | `UNPAIRED_IDLE` | Unpaired idle. | `string` |
+
+### GroupNotification Schema
+<!-- Table -->
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | `object` | The id of the group. |
+| `author` | `string` | The ContactId of the author. |
+| `body` | `string` | The body of the message. |
+| `chatId` | `string` | The id of the chat. |
+| `recipientIds` | `string[]` | The ContactIds of the recipients. |
+| `timestamp` | `number` | The timestamp of the message. |
+| `type` | `enum('add', 'invite',, 'remove', 'leave', 'subject', 'description', 'picture', 'announce', 'restrict')` | The type of the group notification. |
+
+### Call Schema
+<!-- Table -->
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | `string` | The id of the call. |
+| `from` | `string` | The ContactId of the caller. |
+| `timestamp` | `number` | The timestamp of the call. |
+| `isVideo` | `boolean` | Whether the call is a video call. |
+| `isGroup` | `boolean` | Whether the call is a group call. |
+| `canHandleLocally` | `boolean` | Whether the call can be handled in waweb |
+| `webClientShouldHandle` | `boolean` | Whether the call should be handled in waweb |
+| `participants` | `object` | The participants of the call. |
 
 
 <br >

@@ -1,4 +1,8 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
+## v2.1.0
+-  Added news events for Home Assistant, check [Documentation](https://github.com/gajosu/whatsapp-web-rest-api/pull/16) for more information
+-  Upgraded base image gajosu/whatsapp-web-rest-api@v2.1.0
+
 ## v2.0.4
 - Upgraded base image gajosu/whatsapp-web-rest-api@v2.0.4
 
