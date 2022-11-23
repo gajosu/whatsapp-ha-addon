@@ -19,6 +19,18 @@ This add-on is a wrapper for the [whatsapp-web.js](https://github.com/pedroslope
 6. Scan the QR code
 7. Add the rest commands to Home Assistant configuration.yaml
 
+### **How to get a User ID**
+
+The user id is made from three parts:
+
+- Country code (Example `34` for Spain)
+- Phone number (Example `123456789`)
+- And a static part: @c.us (for users) @g.us (for groups)
+
+So, if you want to send a message to a user with number `123456789` and country code `34`, the user id will be `34123456789@c.us` (the `@c.us` part is static)
+
+<br>
+
 ## Configuration
 Add the following to your `configuration.yaml` file:
 
