@@ -53,7 +53,7 @@ automation:
       - service: rest_command.whatsapp_send_text_message
         data:
           #  sending to +1 22222222
-          to: "122222222"
+          to: "122222222@c.us"
           message: "Someone is at the door!"
 ```
 
