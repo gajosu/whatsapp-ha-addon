@@ -34,22 +34,223 @@ So, if you want to send a message to a user with number `123456789` and country 
 ## Configuration
 Add the following to your `configuration.yaml` file:
 
+Note: Replace <your_ha_ip> with your Home Assistant IP address
+
 ```yaml
 rest_command:
+
+    ###############################
+    ############ Chats ############
+    ###############################
+
+    # Delete a chat
+    whatsapp_delete_chat:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}'
+        method: DELETE
+
+    # Archive a chat
+    whatsapp_archive_chat:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/archive'
+        method: PUT
+
+    # Unarchive chat
+    whatsapp_unarchive_chat:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/unarchive'
+        method: PUT
+
+    # Pin a chat
+    whatsapp_pin_chat:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/pin'
+        method: PUT
+
+    # Unpin a chat
+    whatsapp_unpin_chat:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/unpin'
+        method: PUT
+
+    # mark as read
+    whatsapp_mark_chat_as_read:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/read'
+        method: PUT
+
+    # mark a chat as unread
+    whatsapp_mark_chat_as_unread:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/unread'
+        method: PUT
+
+    # send typing status
+    whatsapp_send_typing_status:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/send-typing'
+        method: PUT
+
+    # send recording status
+    whatsapp_send_recording_status:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/send-recording'
+        method: PUT
+
+    # send clear command to stop typing or recording
+    whatsapp_send_clear_status:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/clear-status'
+        method: PUT
+
+
+    ###############################
+    ########### Messages ##########
+    ###############################
+
+    # send a message to a chat
     whatsapp_send_text_message:
-        url: http://<your_ha_ip>:3000/api/messages
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/messages'
         method: POST
         headers:
             Content-Type: application/json
-        payload: '{"to": "{{ to }}", "msg": "{{ message }}"}'
+        payload: '{"msg": "{{ message }}"}'
 
     # Send a file, e.g. a picture
     whatsapp_send_media_message:
-        url: http://<your_ha_ip>:3000/api/messages
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/messages'
         method: POST
         headers:
             Content-Type: application/json
-        payload: '{"to": "{{ to }}", "url": "{{ url }}"}'
+        payload: '{"url": "{{ url }}"}'
+
+    # Star a message
+    whatsapp_star_message:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/messages/{{ message_id }}/star'
+        method: PUT
+
+    # Unstar a message
+    whatsapp_unstar_message:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/messages/{{ message_id }}/unstar'
+        method: PUT
+
+    # react to a message with a emoji
+    whatsapp_react_message:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/messages/{{ message_id }}/react'
+        method: PUT
+        headers:
+            Content-Type: application/json
+        #reaction must be a emoji like: 😂
+        payload: '{"reaction": "{{ reaction }}"}'
+
+    # Unreact to a message
+    whatsapp_unreact_message:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/messages/{{ message_id }}/unreact'
+        method: PUT
+
+    # Delete a message
+    whatsapp_delete_message:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/messages/{{ message_id }}'
+        method: DELETE
+
+  ###############################
+  ############ Groups ###########
+  ###############################
+
+    # Create a group
+    # participants must be a list of user ids
+    # yaml example:
+    #   data:
+    #     name: "My group"
+    #     participants:
+    #       - 12345679@c.us
+    #       - 98765432@c.us
+    whatsapp_create_group:
+        url: 'http://<your_ha_ip>:3000/api/groups'
+        method: POST
+        headers:
+            Content-Type: application/json
+        payload: '{"name": "{{ name }}", "participants": {{ participants }}}'
+
+    # update group info
+    whatsapp_update_group:
+        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}'
+        method: PUT
+        headers:
+            Content-Type: application/json
+        payload: '{"name": "{{ name }}", "description": "{{ description }}"}'
+    
+    # Add participants to a group
+    whatsapp_add_participants_to_group:
+        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}/participants'
+        method: POST
+        headers:
+            Content-Type: application/json
+        payload: '{"participants": {{ participants }}}'
+
+    # Remove participants from a group
+    whatsapp_remove_participants_from_group:
+        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}/participants'
+        method: DELETE
+        headers:
+            Content-Type: application/json
+        payload: '{"participants": {{ participants }}}'
+
+    # promote participants to admins
+    whatsapp_promote_participants_to_admins:
+        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}/promote'
+        method: PUT
+        headers:
+            Content-Type: application/json
+        payload: '{"participants": {{ participants }}}'
+
+    # demote admins to participants
+    whatsapp_demote_admins_to_participants:
+        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}/demote'
+        method: PUT
+        headers:
+            Content-Type: application/json
+        payload: '{"participants": {{ participants }}}'
+
+    # leave a group
+    whatsapp_leave_group:
+        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}'
+        method: DELETE
+
+
+  ###############################
+  ########### Contacts ##########
+  ###############################
+
+    #block a contact
+    whatsapp_block_contact:
+        url: 'http://<your_ha_ip>:3000/api/contacts/{{ contact_id }}/block'
+        method: PUT
+
+    #unblock a contact
+    whatsapp_unblock_contact:
+        url: 'http://<your_ha_ip>:3000/api/contacts/{{ contact_id }}/unblock'
+        method: PUT
+
+  ###############################
+  ########### User ##############
+  ###############################
+
+    # send online status
+    whatsapp_send_available_presence:
+        url: 'http://<your_ha_ip>:3000/api/me/presence/available'
+        method: PUT
+
+    # send offline status
+    whatsapp_send_unavailable_presence:
+        url: 'http://<your_ha_ip>:3000/api/me/presence/unavailable'
+        method: PUT
+
+    # update display name
+    whatsapp_update_display_name:
+        url: 'http://<your_ha_ip>:3000/api/me/display-name'
+        method: PUT
+        headers:
+            Content-Type: application/json
+        payload: '{"name": "{{ name }}"}'
+
+    # update text status
+    whatsapp_update_status:
+        url: 'http://<your_ha_ip>:3000/api/me/text-status'
+        method: PUT
+        headers:
+            Content-Type: application/json
+        payload: '{"status": "{{ status }}"}'
 ```
 
 ## Example usage
