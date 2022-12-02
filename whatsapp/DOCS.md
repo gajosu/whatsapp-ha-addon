@@ -145,7 +145,7 @@ rest_command:
     #       - 12345679@c.us
     #       - 98765432@c.us
     whatsapp_create_group:
-        url: 'http://<your_ha_ip>:3000/api/groups'
+        url: 'http://<your_ha_ip>:3000/api/chats/groups'
         method: POST
         headers:
             Content-Type: application/json
@@ -153,7 +153,7 @@ rest_command:
 
     # update group info
     whatsapp_update_group:
-        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}'
+        url: 'http://<your_ha_ip>:3000/api/chats/groups/{{ group_id }}'
         method: PUT
         headers:
             Content-Type: application/json
@@ -161,7 +161,7 @@ rest_command:
     
     # Add participants to a group
     whatsapp_add_participants_to_group:
-        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}/participants'
+        url: 'http://<your_ha_ip>:3000/api/chats/groups/{{ group_id }}/participants'
         method: POST
         headers:
             Content-Type: application/json
@@ -169,7 +169,7 @@ rest_command:
 
     # Remove participants from a group
     whatsapp_remove_participants_from_group:
-        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}/participants'
+        url: 'http://<your_ha_ip>:3000/api/chats/groups/{{ group_id }}/participants'
         method: DELETE
         headers:
             Content-Type: application/json
@@ -177,7 +177,7 @@ rest_command:
 
     # promote participants to admins
     whatsapp_promote_participants_to_admins:
-        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}/promote'
+        url: 'http://<your_ha_ip>:3000/api/chats/groups/{{ group_id }}/promote'
         method: PUT
         headers:
             Content-Type: application/json
@@ -185,7 +185,7 @@ rest_command:
 
     # demote admins to participants
     whatsapp_demote_admins_to_participants:
-        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}/demote'
+        url: 'http://<your_ha_ip>:3000/api/chats/groups/{{ group_id }}/demote'
         method: PUT
         headers:
             Content-Type: application/json
@@ -193,7 +193,7 @@ rest_command:
 
     # leave a group
     whatsapp_leave_group:
-        url: 'http://<your_ha_ip>:3000/api/groups/{{ group_id }}'
+        url: 'http://<your_ha_ip>:3000/api/chats/groups/{{ group_id }}'
         method: DELETE
 
 
