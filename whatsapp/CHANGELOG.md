@@ -1,3 +1,6 @@
+## v2.2.1
+- Upgraded base image gajosu/whatsapp-web-rest-api@v2.2.1
+
 ## v2.2.0
 -  Added news http endpoints, check [Api Rest Documentation](https://github.com/gajosu/whatsapp-web-rest-api/pull/20) for more information
 -  Upgraded base image gajosu/whatsapp-web-rest-api@v2.2.0
