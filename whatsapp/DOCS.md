@@ -137,19 +137,17 @@ rest_command:
   ###############################
 
     # Create a group
-    # participants must be a list of user ids
+    # participants must be a json array of user ids
     # yaml example:
     #   data:
     #     name: "My group"
-    #     participants:
-    #       - 12345679@c.us
-    #       - 98765432@c.us
+    #     participants: "[\"123456789@c.us\", \"987654321@c.us\"]"
     whatsapp_create_group:
         url: 'http://<your_ha_ip>:3000/api/chats/groups'
         method: POST
         headers:
             Content-Type: application/json
-        payload: '{"name": "{{ name }}", "participants": {{ participants }}}'
+        payload: '{"name": "{{ name }}", "participants": {{ participants | regex_replace('\'', '"') }}}'
 
     # update group info
     whatsapp_update_group:
