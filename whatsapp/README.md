@@ -15,15 +15,15 @@ This add-on is a wrapper for the [whatsapp-web.js](https://github.com/pedroslope
 You can find the documentation in the Documentation tab or [here](https://github.com/gajosu/whatsapp-ha-addon/blob/master/whatsapp/DOCS.md)
 
 ## Support
-If you have any questions, please open an issue on the [gajosu/whatsapp-web-rest-api](https://github.com/gajosu/whatsapp-web-rest-api) repository.
+If you have any questions, please open an issue on the [gajosu/ha-whatsapp-web-rest-api](https://github.com/gajosu/ha-whatsapp-web-rest-api) repository.
 
 ## Contributing
-If you want to contribute to this add-on, please open a pull request on the [gajosu/whatsapp-web-rest-api](https://github.com/gajosu/whatsapp-web-rest-api)
+If you want to contribute to this add-on, please open a pull request on the [gajosu/ha-whatsapp-web-rest-api](https://github.com/gajosu/ha-whatsapp-web-rest-api)
 
 
 ## Credits
 - Pedro S Lopez ([@pedroslopez](https://github.com/pedroslopez)) for the [whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js)
-- Gabriel González ([@gajosu](https://github.com/gajosu?)) for the [whatsapp-web-rest-api](https://github.com/gajosu/whatsapp-web-rest-api)
+- Gabriel González ([@gajosu](https://github.com/gajosu?)) for the [ha-whatsapp-web-rest-api](https://github.com/gajosu/ha-whatsapp-web-rest-api)
 
 ## Disclaimer
 This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp or any of its subsidiaries or its affiliates. The official WhatsApp website can be found at https://whatsapp.com. "WhatsApp" as well as related names, marks, emblems and images are registered trademarks of their respective owners.
