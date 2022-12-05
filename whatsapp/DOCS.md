@@ -383,8 +383,8 @@ automation:
 For more details about the API, see the [documentation](https://docs.wwebjs.dev/) of the underlying library.
 
 ## Support
-If you have any questions, please open an issue on the [gajosu/whatsapp-web-rest-api](https://github.com/gajosu/whatsapp-web-rest-api) repository.
+If you have any questions, please open an issue on the [gajosu/ha-whatsapp-web-rest-api](https://github.com/gajosu/ha-whatsapp-web-rest-api) repository.
 
 ## Contributing
-If you want to contribute to this add-on, please open a pull request on the [gajosu/whatsapp-web-rest-api](https://github.com/gajosu/whatsapp-web-rest-api)
+If you want to contribute to this add-on, please open a pull request on the [gajosu/ha-whatsapp-web-rest-api](https://github.com/gajosu/ha-whatsapp-web-rest-api)
 
