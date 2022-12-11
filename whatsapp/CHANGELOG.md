@@ -1,3 +1,6 @@
+## v2.2.2
+- Upgraded base image gajosu/ha-whatsapp-web-rest-api@v2.2.2
+
 ## v2.2.1
 - Upgraded base image gajosu/whatsapp-web-rest-api@v2.2.1
 

@@ -17,8 +17,8 @@ COPY rootfs /
 
 WORKDIR /app
 
-RUN git clone --branch "v2.2.1" --depth=1 \
-        "https://github.com/gajosu/whatsapp-web-rest-api.git" /app
+RUN git clone --branch "v2.2.2" --depth=1 \
+        "https://github.com/gajosu/ha-whatsapp-web-rest-api.git" /app
 
 # install production dependencies
 RUN npm install
