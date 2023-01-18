@@ -1,3 +1,6 @@
+## v2.2.5
+- Update to v2.2.5, see [release notes](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.2.5) - if you have `(reading 'LegacyPhoneFeatures')` error, please reinstall the addon
+
 ## v2.2.4
 - Update to v2.2.4, see [release notes](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.2.4)
 
