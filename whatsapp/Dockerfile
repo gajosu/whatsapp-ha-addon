@@ -19,7 +19,7 @@ WORKDIR /app
 
 RUN npm install npm@latest -g
 
-RUN git clone --branch "v2.2.6" --depth=1 \
+RUN git clone --branch "v2.2.7" --depth=1 \
         "https://github.com/gajosu/ha-whatsapp-web-rest-api.git" /app
 
 # install production dependencies
