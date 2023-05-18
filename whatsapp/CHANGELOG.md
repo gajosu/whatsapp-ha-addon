@@ -1,3 +1,11 @@
+## v2.3.0
+## Breaking Changes
+
+- The deprecated POST endpoint `/api/messages` has been removed. Please use the updated endpoint `/api/chats/:id/messages` for sending messages to a specific chat.
+
+- Update to v2.3.0, see [release notes](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.3.0)
+
+
 ## v2.2.7
 - Update to v2.2.7, see [release notes](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.2.7)
 
