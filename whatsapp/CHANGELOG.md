@@ -1,3 +1,9 @@
+## v2.3.4
+## Breaking Changes
+Added `whatsapp_message_reaction` event for message reactions. For more information check the full release notes [here](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.3.4).
+
+- Update to v2.3.4, see [release notes](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.3.4)
+
 ## v2.3.3
 - Update to v2.3.3, see [release notes](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.3.3)
 
