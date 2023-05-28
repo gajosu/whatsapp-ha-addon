@@ -1,3 +1,6 @@
+## v2.3.4.1
+- Add ffmpeg to Dockerfile
+
 ## v2.3.4
 ## Breaking Changes
 Added `whatsapp_message_reaction` event for message reactions. For more information check the full release notes [here](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.3.4).
