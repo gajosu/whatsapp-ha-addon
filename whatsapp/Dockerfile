@@ -2,7 +2,7 @@
 # ARG BUILD_FROM
 
 # FROM $BUILD_FROM
-FROM ghcr.io/hassio-addons/debian-base:6.1.3
+FROM ghcr.io/hassio-addons/debian-base:6.2.7
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
