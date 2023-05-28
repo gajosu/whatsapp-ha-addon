@@ -10,7 +10,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 RUN apt-get update && apt-get install -y curl gnupg2 && curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs git
 
 #install chromiun
-RUN apt-get install -y chromium git
+RUN apt-get install -y chromium ffmpeg git
 
 # Copy root filesystem
 COPY rootfs /
