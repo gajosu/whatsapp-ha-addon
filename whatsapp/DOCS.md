@@ -215,12 +215,12 @@ rest_command:
 
     # send online status
     whatsapp_send_available_presence:
-        url: 'http://<your_ha_ip>:3000/api/me/presence/available'
+        url: 'http://<your_ha_ip>:3000/api/me/available'
         method: PUT
 
     # send offline status
     whatsapp_send_unavailable_presence:
-        url: 'http://<your_ha_ip>:3000/api/me/presence/unavailable'
+        url: 'http://<your_ha_ip>:3000/api/me/unavailable'
         method: PUT
 
     # update display name
