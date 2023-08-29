@@ -68,18 +68,18 @@ rest_command:
         method: PUT
 
     # send typing status
-    whatsapp_send_typing_status:
+    whatsapp_send_typing_state:
         url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/send-typing'
         method: PUT
 
     # send recording status
-    whatsapp_send_recording_status:
+    whatsapp_send_recording_state:
         url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/send-recording'
         method: PUT
 
     # send clear command to stop typing or recording
-    whatsapp_send_clear_status:
-        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/clear-status'
+    whatsapp_send_clear_state:
+        url: 'http://<your_ha_ip>:3000/api/chats/{{ chat_id }}/clear-state'
         method: PUT
 
 
