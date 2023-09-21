@@ -17,8 +17,6 @@ COPY rootfs /
 
 WORKDIR /app
 
-RUN npm install npm@latest -g
-
 RUN git clone --branch "v2.3.7" --depth=1 \
         "https://github.com/gajosu/ha-whatsapp-web-rest-api.git" /app
 
