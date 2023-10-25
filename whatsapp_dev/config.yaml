@@ -20,7 +20,7 @@ schema:
   webserver_port: "int"
 
 ports:
-  3001|/tcp: 3001
+  3001/tcp: 3001
 
 ports_description:
   3001/tcp: The webserver port (Not used for Ingress).
