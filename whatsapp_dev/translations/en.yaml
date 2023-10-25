@@ -1,0 +1,7 @@
+network:
+  3000/tcp: The webserver port (Not used for Ingress)
+
+configuration:
+  webserver_port:
+    name: Webserver port
+    description: Default 3001, if changed it must also be changed in the network configuration.

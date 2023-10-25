@@ -1,0 +1,28 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: Whatsapp Dev
+version: "2.3.7"
+slug: whatsapp_dev
+description: Whatsapp integration for Home Assistant (dev version)
+url: "https://github.com/gajosu/whatsapp-ha-addon/tree/master/whatsapp"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+init: false
+map:
+  - share:rw
+
+options:
+  webserver_port: 3001
+schema:
+  webserver_port: "int"
+
+ports:
+  3001|/tcp: 3001
+
+ports_description:
+  3001/tcp: The webserver port (Not used for Ingress).
+# image: "ghcr.io/gajosu/amd64-whatsapp-ha-addon:2.0.0"
+homeassistant_api: true

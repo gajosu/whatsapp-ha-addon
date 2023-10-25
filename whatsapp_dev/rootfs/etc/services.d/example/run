@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Start the example service
+# s6-overlay docs: https://github.com/just-containers/s6-overlay
+# ==============================================================================
+## Run your program
+
+declare webserver_port
+webserver_port=$(bashio::config 'webserver_port')
+
+cd /app || exit 1
+exec node dist/src/index.js --port="${webserver_port}"
