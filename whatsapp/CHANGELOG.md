@@ -1,3 +1,6 @@
+## v2.3.8
+- Update to v2.3.8, see [release notes](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.3.8)
+
 ## v2.3.7.1
 - Update docker base image
 
