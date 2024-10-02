@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Whatsapp Dev
-version: "2.3.9"
+version: "2.4.0"
 slug: whatsapp_dev
 description: Whatsapp integration for Home Assistant (dev version)
 url: "https://github.com/gajosu/whatsapp-ha-addon/tree/master/whatsapp_dev"
