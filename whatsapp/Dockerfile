@@ -2,7 +2,7 @@
 # ARG BUILD_FROM
 
 # FROM $BUILD_FROM
-FROM ghcr.io/hassio-addons/debian-base:7.1.0
+FROM ghcr.io/hassio-addons/debian-base:7.8.3
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
@@ -17,7 +17,7 @@ COPY rootfs /
 
 WORKDIR /app
 
-RUN git clone --branch "v2.4.0" --depth=1 \
+RUN git clone --branch "v2.4.1" --depth=1 \
         "https://github.com/gajosu/ha-whatsapp-web-rest-api.git" /app
 
 # install production dependencies
