@@ -1,3 +1,9 @@
+## v2.4.3
+- Update to v2.4.3, see [release notes](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.4.3)
+
+## v2.4.2
+- Update to v2.4.2, see [release notes](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.4.2)
+
 ## v2.4.1
 - Update to v2.4.1, see [release notes](https://github.com/gajosu/ha-whatsapp-web-rest-api/releases/tag/v2.4.1)
 
