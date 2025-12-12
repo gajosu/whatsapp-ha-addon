@@ -11,6 +11,14 @@ _A WhatsApp API client that connects through the WhatsApp Web browser app with H
 ## What is this add-on?
 This add-on is a wrapper for the [whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js) library. It allows you to send and receive messages from WhatsApp through Home Assistant.
 
+## ☕ Support the Project
+
+If this project has been useful to you, consider supporting my work with a coffee! Your support helps me maintain and improve this project.
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/gajosu)
+
+---
+
 ## DOCUMENTATION
 You can find the documentation in the Documentation tab or [here](https://github.com/gajosu/whatsapp-ha-addon/blob/master/whatsapp/DOCS.md)
 
