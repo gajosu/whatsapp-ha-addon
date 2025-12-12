@@ -2,6 +2,14 @@
 
 <!-- This repository can be used as a "blueprint" for add-on development to help you get started. -->
 
+## ☕ Support the Project
+
+If this project has been useful to you, consider supporting my work with a coffee! Your support helps me maintain and improve this project.
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/gajosu)
+
+---
+
 ## Installation
 
 Use the following button to add the repository to your Home Assistant instance:
