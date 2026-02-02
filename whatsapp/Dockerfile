@@ -17,7 +17,7 @@ COPY rootfs /
 
 WORKDIR /app
 
-RUN git clone --branch "v2.4.6" --depth=1 \
+RUN git clone --branch "v2.4.7" --depth=1 \
         "https://github.com/gajosu/ha-whatsapp-web-rest-api.git" /app
 
 # install production dependencies
